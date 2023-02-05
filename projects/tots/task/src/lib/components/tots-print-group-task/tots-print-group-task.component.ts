@@ -16,6 +16,7 @@ export class TotsPrintGroupTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadConfig();
+    this.loadMockData();
   }
 
   onTableAction(action: TotsActionTable) {
