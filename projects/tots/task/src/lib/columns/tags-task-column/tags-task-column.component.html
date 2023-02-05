@@ -1,1 +1,5 @@
-<p>tags-task-column works!</p>
+<div *ngIf="item.tags && item.tags.length > 0" class="tots-tags-task">
+    <div class="tots-tags-task__tag" *ngFor="let tag of item.tags" [ngStyle]="{'background-color': tag.tag?.color}">
+        <span>{{tag.tag?.title}}</span>
+    </div>
+</div>

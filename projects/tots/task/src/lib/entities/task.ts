@@ -1,3 +1,5 @@
+import { TotsTaskTag } from "./tag";
+
 export class TotsTask {
     id?: number;
     title: string = '';
@@ -12,4 +14,6 @@ export class TotsTask {
     data: any;
     created_at?: string;
     updated_at?: string;
+
+    tags?: Array<TotsTaskTag>
 }

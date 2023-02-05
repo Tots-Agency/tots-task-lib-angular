@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
 import { StringColumnComponent, TotsActionTable, TotsTableComponent, TotsTableConfig } from '@tots/table';
 import { of } from 'rxjs';
+import { TagsTaskColumnComponent } from '../../../public-api';
+import { TotsTask } from '../../entities/task';
 
 @Component({
   selector: 'tots-print-group-task',
@@ -12,11 +14,12 @@ export class TotsPrintGroupTaskComponent implements OnInit {
 
   @ViewChild('tableComp') tableComp!: TotsTableComponent;
 
+  @Input() tasks: TotsListResponse<TotsTask> = new TotsListResponse<TotsTask>();
+
   config = new TotsTableConfig();
 
   ngOnInit(): void {
     this.loadConfig();
-    this.loadMockData();
   }
 
   onTableAction(action: TotsActionTable) {
@@ -27,26 +30,14 @@ export class TotsPrintGroupTaskComponent implements OnInit {
     this.config.id = 'table-example';
     this.config.columns = [
       { key: 'title', component: StringColumnComponent, title: 'Titulo', field_key: 'title', hasOrder: false },
-      /*{ key: 'subtitle', component: TwoStringColumnComponent, title: 'Titulo', field_key: 'title', hasOrder: false, extra: { field_subtitle_key: 'subtitle' } },
-      { key: 'include', component: BooleanColumnComponent, title: 'Activo', field_key: 'active', hasOrder: false },
+      { key: 'tags', component: TagsTaskColumnComponent, title: 'Category', hasOrder: false },
+      /*{ key: 'include', component: BooleanColumnComponent, title: 'Activo', field_key: 'active', hasOrder: false },
       { key: 'home', component: IconButtonColumnComponent, title: 'asd', field_key: 'active', hasOrder: false, extra: { icon: 'home', action: 'click-home' } },
       { key: 'more', component: MoreMenuColumnComponent, title: '', extra: { width: '60px', actions: [
         { icon: 'add', title: 'Editar', key: 'edit' },
         { icon: 'add', title: 'Eliminar', key: 'remove' },
       ]} },*/
     ];
-  }
-
-  loadMockData() {
-    let data = new TotsListResponse();
-    data.data = [
-      { title: 'Design requested for the [project_title] ', active: 1, subtitle: 'AB232' },
-      { title: 'Item 2', active: 1, subtitle: 'AB232' },
-      { title: 'Item 3', active: 0, subtitle: 'AB232' },
-      { title: 'Item 4', active: 0, subtitle: 'AB232' },
-      { title: 'Item 5', active: 1, subtitle: 'AB232' },
-    ]
-
-    this.config.obs = of(data);
+    this.config.obs = of(this.tasks);
   }
 }

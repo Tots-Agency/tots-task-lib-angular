@@ -1,0 +1,6 @@
+.tots-tags-task__tag {
+    display: inline-block;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 3px 10px;
+}
