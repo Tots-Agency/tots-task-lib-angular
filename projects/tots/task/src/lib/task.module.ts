@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 
+/** Tots Libraries */
+import { TotsCoreModule } from '@tots/core';
+import { TotsTableModule } from '@tots/table';
+
 /** Components */
 import { TotsPrintGroupTaskComponent } from './components/tots-print-group-task/tots-print-group-task.component';
 
@@ -10,6 +14,9 @@ import { TotsPrintGroupTaskComponent } from './components/tots-print-group-task/
     TotsPrintGroupTaskComponent
   ],
   imports: [
+    /** Tots Libraries */
+    TotsCoreModule,
+    TotsTableModule
   ],
   exports: [
     /** Components */
