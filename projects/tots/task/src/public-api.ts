@@ -11,6 +11,18 @@ export * from './lib/entities/space';
 export * from './lib/entities/status';
 
 /**
+ * Columns
+ */
+export * from './lib/columns/status-task-column/status-task-column.component';
+export * from './lib/columns/tags-task-column/tags-task-column.component';
+export * from './lib/columns/assign-task-column/assign-task-column.component';
+
+/**
+ * Components
+ */
+export * from './lib/components/tots-print-group-task/tots-print-group-task.component';
+
+/**
  * Modules
  */
 export * from './lib/task.module';
