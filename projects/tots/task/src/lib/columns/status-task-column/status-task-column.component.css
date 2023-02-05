@@ -1,0 +1,10 @@
+.tots-status-task {
+    display: block;
+    background-color: lightgray;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}

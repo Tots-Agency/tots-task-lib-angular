@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
 import { StringColumnComponent, TotsActionTable, TotsTableComponent, TotsTableConfig } from '@tots/table';
 import { of } from 'rxjs';
-import { TagsTaskColumnComponent } from '../../../public-api';
+import { StatusTaskColumnComponent, TagsTaskColumnComponent } from '../../../public-api';
 import { TotsTask } from '../../entities/task';
 
 @Component({
@@ -29,8 +29,9 @@ export class TotsPrintGroupTaskComponent implements OnInit {
   loadConfig() {
     this.config.id = 'table-example';
     this.config.columns = [
-      { key: 'title', component: StringColumnComponent, title: 'Titulo', field_key: 'title', hasOrder: false },
+      { key: 'title', component: StringColumnComponent, title: 'Task', field_key: 'title', hasOrder: false },
       { key: 'tags', component: TagsTaskColumnComponent, title: 'Category', hasOrder: false },
+      { key: 'status', component: StatusTaskColumnComponent, title: 'Status', hasOrder: false },
       /*{ key: 'include', component: BooleanColumnComponent, title: 'Activo', field_key: 'active', hasOrder: false },
       { key: 'home', component: IconButtonColumnComponent, title: 'asd', field_key: 'active', hasOrder: false, extra: { icon: 'home', action: 'click-home' } },
       { key: 'more', component: MoreMenuColumnComponent, title: '', extra: { width: '60px', actions: [

@@ -1,3 +1,4 @@
+import { TotsStatusTask } from "./status";
 import { TotsTaskTag } from "./tag";
 
 export class TotsTask {
@@ -16,4 +17,5 @@ export class TotsTask {
     updated_at?: string;
 
     tags?: Array<TotsTaskTag>
+    status?: TotsStatusTask;
 }
