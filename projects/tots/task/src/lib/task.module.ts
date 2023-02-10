@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/** Angular Material */
+import { MatDialogModule } from '@angular/material/dialog';
+
 /** Tots Libraries */
 import { TotsCoreModule } from '@tots/core';
 import { TotsTableModule } from '@tots/table';
@@ -35,6 +38,10 @@ import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/to
   ],
   imports: [
     CommonModule,
+
+    /** Angular Material */
+    MatDialogModule,
+
     /** Tots Libraries */
     TotsCoreModule,
     TotsTableModule,

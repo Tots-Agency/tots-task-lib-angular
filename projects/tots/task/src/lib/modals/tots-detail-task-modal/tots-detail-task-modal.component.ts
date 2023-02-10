@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TotsDetailTaskModalConfig } from '../../entities/tots-detail-task-modal-config';
 
 @Component({
   selector: 'tots-detail-task-modal',
@@ -8,11 +10,10 @@ import { Component } from '@angular/core';
 export class TotsDetailTaskModalComponent {
   isLoading = false;
 
-  /*constructor(
+  constructor(
     protected dialogRef: MatDialogRef<TotsDetailTaskModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public config: TotsDetailTaskModalConfig,
   ) {
-    console.log(data);
-    this.task = data.task;
-  }*/
+    
+  }
 }
