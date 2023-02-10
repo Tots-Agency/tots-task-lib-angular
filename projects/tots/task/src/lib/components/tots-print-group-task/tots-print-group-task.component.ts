@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
-import { StringColumnComponent, TotsActionTable, TotsTableComponent, TotsTableConfig } from '@tots/table';
+import { DateColumnComponent } from '@tots/date-column';
+import { MoreMenuColumnComponent, StringColumnComponent, TotsActionTable, TotsTableComponent, TotsTableConfig } from '@tots/table';
 import { of } from 'rxjs';
 import { StatusTaskColumnComponent, TagsTaskColumnComponent } from '../../../public-api';
 import { TotsTask } from '../../entities/task';
@@ -32,12 +33,11 @@ export class TotsPrintGroupTaskComponent implements OnInit {
       { key: 'title', component: StringColumnComponent, title: 'Task', field_key: 'title', hasOrder: false },
       { key: 'tags', component: TagsTaskColumnComponent, title: 'Category', hasOrder: false },
       { key: 'status', component: StatusTaskColumnComponent, title: 'Status', hasOrder: false },
-      /*{ key: 'include', component: BooleanColumnComponent, title: 'Activo', field_key: 'active', hasOrder: false },
-      { key: 'home', component: IconButtonColumnComponent, title: 'asd', field_key: 'active', hasOrder: false, extra: { icon: 'home', action: 'click-home' } },
+      { key: 'created_at', component: DateColumnComponent, title: 'Date', field_key: 'created_at', hasOrder: false, extra: { format_in: 'YYYY-MM-DD', format_out: 'MM/DD/YYYY' } },
       { key: 'more', component: MoreMenuColumnComponent, title: '', extra: { width: '60px', actions: [
-        { icon: 'add', title: 'Editar', key: 'edit' },
-        { icon: 'add', title: 'Eliminar', key: 'remove' },
-      ]} },*/
+        { icon: 'add', title: 'Edit', key: 'edit' },
+        { icon: 'add', title: 'Remove', key: 'remove' },
+      ]} },
     ];
     this.config.obs = of(this.tasks);
   }

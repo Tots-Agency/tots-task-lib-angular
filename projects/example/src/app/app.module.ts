@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TotsTaskModule } from 'projects/tots/task/src/public-api';
 import { ExampleGroupComponent } from './pages/example-group/example-group.component';
+import { TotsDateColumnModule } from '@tots/date-column';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ExampleGroupComponent } from './pages/example-group/example-group.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TotsTaskModule
+    TotsTaskModule,
+    TotsDateColumnModule
   ],
   providers: [],
   bootstrap: [AppComponent]
