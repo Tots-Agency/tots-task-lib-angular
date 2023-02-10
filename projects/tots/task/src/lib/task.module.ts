@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 /** Tots Libraries */
 import { TotsCoreModule } from '@tots/core';
@@ -12,7 +13,9 @@ import { StatusTaskColumnComponent } from './columns/status-task-column/status-t
 
 /** Components */
 import { TotsPrintGroupTaskComponent } from './components/tots-print-group-task/tots-print-group-task.component';
-import { CommonModule } from '@angular/common';
+
+/** Modals */
+import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/tots-detail-task-modal.component';
 
 
 
@@ -26,6 +29,9 @@ import { CommonModule } from '@angular/common';
 
     /** Components */
     TotsPrintGroupTaskComponent,
+
+    /** Modals */
+    TotsDetailTaskModalComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +42,10 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     /** Components */
-    TotsPrintGroupTaskComponent
+    TotsPrintGroupTaskComponent,
+
+    /** Modals */
+    TotsDetailTaskModalComponent,
   ]
 })
 export class TotsTaskModule { }

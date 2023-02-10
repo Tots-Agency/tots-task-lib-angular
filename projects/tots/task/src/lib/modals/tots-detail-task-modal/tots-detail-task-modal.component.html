@@ -1,0 +1,30 @@
+<div class="task-modal-container">
+    <div *ngIf="isLoading">Loading</div>
+
+    <!--<div *ngIf="!isLoading" class="task-header">
+        <hos-assign-task [task]="task" [subject]="actionSubject"></hos-assign-task>
+        <hos-extra-actions-task [task]="task" (clickAction)="clickAction($event)"></hos-extra-actions-task>
+        <div class="spacer"></div>
+        <hos-status-box-task [task]="task"></hos-status-box-task>
+        <button mat-flat-button (click)="onClickClose()" class="btn-close"><mat-icon>close</mat-icon></button>
+    </div>
+
+    <div *ngIf="!isLoading" class="task-body">
+        <div class="task-id text-small"><small>ID: #{{task.id}}</small></div>
+        <h1 class="mat-h1 task-title">{{task.title}}</h1>
+        <div *ngIf="task.tags" class="tags"><span *ngFor="let t of task.tags" class="tag" [ngStyle]="{'backgroundColor': t.color }">{{t.title}}</span></div>
+
+        <hos-extra-components-task [task]="task" [components]="task.extraComponentsTop"></hos-extra-components-task>
+
+        <hos-extra-params-view-task *ngIf="task.data && task.data.extra_params" [task]="task"></hos-extra-params-view-task>
+        <div class="task-description">
+            <div><small>Description</small></div>
+            <div [innerHTML]="task.caption"></div>
+        </div>
+
+        <hos-extra-components-task [task]="task" [components]="task.extraComponents"></hos-extra-components-task>
+
+        <hos-checklist-task [task]="task"></hos-checklist-task>
+        <hos-files-task [task]="task"></hos-files-task>
+    </div>-->
+</div>
