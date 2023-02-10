@@ -19,6 +19,7 @@ export class TotsPrintGroupTaskComponent implements OnInit {
   @Input() tasks: TotsListResponse<TotsTask> = new TotsListResponse<TotsTask>();
 
   @Output() loadMore = new EventEmitter<boolean>();
+  @Output() onAction = new EventEmitter<TotsActionTable>();
 
   config = new TotsTableConfig();
 
@@ -27,7 +28,7 @@ export class TotsPrintGroupTaskComponent implements OnInit {
   }
 
   onTableAction(action: TotsActionTable) {
-    console.log(action);
+    this.onAction.emit(action);
   }
 
   loadTasks(service: Observable<TotsListResponse<TotsTask>>) {

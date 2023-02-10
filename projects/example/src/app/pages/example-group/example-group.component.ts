@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
+import { TotsActionTable } from '@tots/table';
 
 @Component({
   selector: 'app-example-group',
@@ -14,6 +15,10 @@ export class ExampleGroupComponent implements OnInit {
   
     ngOnInit(): void {
       this.loadMockData();
+    }
+
+    onTableAction(action: TotsActionTable) {
+      console.log(action);
     }
 
     loadMockData() {
