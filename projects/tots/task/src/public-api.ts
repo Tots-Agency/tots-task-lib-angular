@@ -9,6 +9,9 @@ export * from './lib/entities/task';
 export * from './lib/entities/group';
 export * from './lib/entities/space';
 export * from './lib/entities/status';
+export * from './lib/entities/tag';
+export * from './lib/entities/tots-action-task';
+export * from './lib/entities/tots-detail-task-modal-config';
 
 /**
  * Columns
