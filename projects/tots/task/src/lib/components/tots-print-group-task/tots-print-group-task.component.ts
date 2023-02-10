@@ -1,8 +1,8 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
 import { DateColumnComponent } from '@tots/date-column';
 import { MoreMenuColumnComponent, StringColumnComponent, TotsActionTable, TotsTableComponent, TotsTableConfig } from '@tots/table';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { StatusTaskColumnComponent, TagsTaskColumnComponent } from '../../../public-api';
 import { TotsTask } from '../../entities/task';
 
@@ -14,8 +14,11 @@ import { TotsTask } from '../../entities/task';
 export class TotsPrintGroupTaskComponent implements OnInit {
 
   @ViewChild('tableComp') tableComp!: TotsTableComponent;
+  @ViewChild('groupContainer') groupContainer!: ElementRef;
 
   @Input() tasks: TotsListResponse<TotsTask> = new TotsListResponse<TotsTask>();
+
+  @Output() loadMore = new EventEmitter<boolean>();
 
   config = new TotsTableConfig();
 
@@ -25,6 +28,11 @@ export class TotsPrintGroupTaskComponent implements OnInit {
 
   onTableAction(action: TotsActionTable) {
     console.log(action);
+  }
+
+  loadTasks(service: Observable<TotsListResponse<TotsTask>>) {
+    this.config.obs = service;
+    this.tableComp.loadItems();
   }
 
   loadConfig() {
@@ -40,5 +48,13 @@ export class TotsPrintGroupTaskComponent implements OnInit {
       ]} },
     ];
     this.config.obs = of(this.tasks);
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: any) {
+    const element = this.groupContainer.nativeElement;
+    if (element.scrollTop + element.offsetHeight >= element.scrollHeight) {
+      this.loadMore.emit(true);
+    }
   }
 }
