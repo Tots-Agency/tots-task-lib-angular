@@ -23,6 +23,7 @@ import { AssignOnlyViewTaskComponent } from './components/assign-only-view-task/
 
 /** Modals */
 import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/tots-detail-task-modal.component';
+import { ExtraActionsTaskComponent } from './components/extra-actions-task/extra-actions-task.component';
 
 
 
@@ -43,6 +44,7 @@ import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/to
 
     /** Modals */
     TotsDetailTaskModalComponent,
+     ExtraActionsTaskComponent,
   ],
   imports: [
     CommonModule,

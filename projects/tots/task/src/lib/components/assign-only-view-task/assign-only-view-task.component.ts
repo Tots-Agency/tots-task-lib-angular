@@ -5,7 +5,7 @@ import { TotsDetailTaskModalConfig } from '../../entities/tots-detail-task-modal
 @Component({
   selector: 'tots-assign-only-view-task',
   templateUrl: './assign-only-view-task.component.html',
-  styleUrls: ['./assign-only-view-task.component.css']
+  styleUrls: ['./assign-only-view-task.component.scss']
 })
 export class AssignOnlyViewTaskComponent {
   @Input() config!: TotsDetailTaskModalConfig;

@@ -3,10 +3,9 @@
 
     <div *ngIf="!isLoading" class="task-header">
         <tots-assign-only-view-task *ngIf="config.disableAssign" [config]="config"></tots-assign-only-view-task>
-        <!--<hos-assign-task [task]="task" [subject]="actionSubject"></hos-assign-task>
-        <hos-extra-actions-task [task]="task" (clickAction)="clickAction($event)"></hos-extra-actions-task>
+        <tots-extra-actions-task [config]="config" (clickAction)="clickAction($event)"></tots-extra-actions-task>
         <div class="spacer"></div>
-        <hos-status-box-task [task]="task"></hos-status-box-task>-->
+        <!--<hos-status-box-task [task]="task"></hos-status-box-task>-->
         <button mat-flat-button (click)="onClickClose()" class="btn-close"><mat-icon>close</mat-icon></button>
     </div>
 

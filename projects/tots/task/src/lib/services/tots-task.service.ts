@@ -15,11 +15,7 @@ export class TotsTaskService {
     protected dialog: MatDialog
   ) { }
   
-  openDetailModal(task: TotsTask): Observable<TotsActionTask> {
-    let config = new TotsDetailTaskModalConfig();
-    config.disableAssign = true;
-    config.task = task;
-
+  openDetailModal(config: TotsDetailTaskModalConfig): Observable<TotsActionTask> {
     return this.dialog.open(TotsDetailTaskModalComponent, {
         data: config
     }).componentInstance.actionSubject;

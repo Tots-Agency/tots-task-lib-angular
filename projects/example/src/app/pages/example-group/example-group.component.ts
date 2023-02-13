@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TotsListResponse } from '@tots/core';
 import { TotsActionTable } from '@tots/table';
-import { TotsTaskService } from 'projects/tots/task/src/public-api';
+import { TotsDetailTaskModalConfig, TotsTaskService } from 'projects/tots/task/src/public-api';
 
 @Component({
   selector: 'app-example-group',
@@ -22,7 +22,14 @@ export class ExampleGroupComponent implements OnInit {
 
     onTableAction(action: TotsActionTable) {
       if(action.key == 'click-row'){
-        this.taskService.openDetailModal(action.item);
+        let config = new TotsDetailTaskModalConfig();
+        config.disableAssign = true;
+        config.task = action.item;
+        config.extraActions = [
+            {title: 'Action 1', color: 'red', key: 'accept'},
+        ];
+
+        this.taskService.openDetailModal(config);
       }
     }
 
