@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /** Angular Material */
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 /** Tots Libraries */
 import { TotsCoreModule } from '@tots/core';
@@ -16,9 +19,13 @@ import { StatusTaskColumnComponent } from './columns/status-task-column/status-t
 
 /** Components */
 import { TotsPrintGroupTaskComponent } from './components/tots-print-group-task/tots-print-group-task.component';
+import { AssignOnlyViewTaskComponent } from './components/assign-only-view-task/assign-only-view-task.component';
 
 /** Modals */
 import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/tots-detail-task-modal.component';
+
+
+
 
 
 
@@ -32,6 +39,7 @@ import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/to
 
     /** Components */
     TotsPrintGroupTaskComponent,
+    AssignOnlyViewTaskComponent,
 
     /** Modals */
     TotsDetailTaskModalComponent,
@@ -40,7 +48,10 @@ import { TotsDetailTaskModalComponent } from './modals/tots-detail-task-modal/to
     CommonModule,
 
     /** Angular Material */
+    MatIconModule,
     MatDialogModule,
+    MatTooltipModule,
+    MatButtonModule,
 
     /** Tots Libraries */
     TotsCoreModule,

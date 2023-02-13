@@ -18,4 +18,5 @@ export class TotsTask {
 
     tags?: Array<TotsTaskTag>
     status?: TotsStatusTask;
+    users?: Array<any>;
 }

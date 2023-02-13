@@ -1,0 +1,9 @@
+<div class="task-assign-container">
+    <div class="rep" *ngFor="let user of (config.task.users ?? []).slice(0, 2);" [matTooltip]="user.firstname + ' ' + user.lastname">
+        <img [src]="user.photo" [alt]="user.firstName" onerror="this.src='/assets/img/user-avatar-empty.svg';" />
+    </div>
+
+    <div *ngIf="config.task.users && config.task.users.length > 2" class="more-users body-2">
+      + {{config.task.users!.length-2}}
+    </div>
+</div>

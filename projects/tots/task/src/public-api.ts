@@ -14,6 +14,11 @@ export * from './lib/entities/tots-action-task';
 export * from './lib/entities/tots-detail-task-modal-config';
 
 /**
+ * Services
+ */
+export * from './lib/services/tots-task.service';
+
+/**
  * Columns
  */
 export * from './lib/columns/status-task-column/status-task-column.component';

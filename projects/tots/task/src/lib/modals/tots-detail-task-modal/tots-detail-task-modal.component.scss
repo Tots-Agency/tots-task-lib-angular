@@ -1,0 +1,40 @@
+.task-modal-container {
+    max-height: 70vh;
+  
+    .task-header {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      padding: 1em;
+  
+      .spacer {
+        margin: auto;
+      }
+  
+      .btn-close{
+        mat-icon{
+          margin: 0 !important;
+        }
+      }
+    }
+  
+    .task-body {
+      width: 800px;
+      max-width: 100%;
+      margin: auto;
+      padding: 2em 2em;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+  
+      .task-id{
+          opacity: 0.75;
+      }
+  
+      .task-title{
+          font-weight: 600;
+          margin: 0.5em 0;
+      }
+    }
+  }
+  
