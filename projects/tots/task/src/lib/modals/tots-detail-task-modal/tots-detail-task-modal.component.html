@@ -9,22 +9,22 @@
         <button mat-flat-button (click)="onClickClose()" class="btn-close"><mat-icon>close</mat-icon></button>
     </div>
 
-    <!--<div *ngIf="!isLoading" class="task-body">
-        <div class="task-id text-small"><small>ID: #{{task.id}}</small></div>
-        <h1 class="mat-h1 task-title">{{task.title}}</h1>
-        <div *ngIf="task.tags" class="tags"><span *ngFor="let t of task.tags" class="tag" [ngStyle]="{'backgroundColor': t.color }">{{t.title}}</span></div>
+    <div *ngIf="!isLoading" class="task-body">
+        <div class="task-id text-small"><small>ID: #{{config.task.id}}</small></div>
+        <h1 class="mat-h1 task-title">{{config.task.title}}</h1>
+        <div *ngIf="config.task.tags" class="tags"><span *ngFor="let t of config.task.tags" class="tag" [ngStyle]="{'backgroundColor': t.tag?.color }">{{t.tag?.title}}</span></div>
 
-        <hos-extra-components-task [task]="task" [components]="task.extraComponentsTop"></hos-extra-components-task>
+        <tots-extra-components-task [config]="config" [position]="'top'"></tots-extra-components-task>
 
-        <hos-extra-params-view-task *ngIf="task.data && task.data.extra_params" [task]="task"></hos-extra-params-view-task>
+        <!--<hos-extra-params-view-task *ngIf="task.data && task.data.extra_params" [task]="task"></hos-extra-params-view-task>-->
         <div class="task-description">
             <div><small>Description</small></div>
-            <div [innerHTML]="task.caption"></div>
+            <div [innerHTML]="config.task.caption"></div>
         </div>
 
-        <hos-extra-components-task [task]="task" [components]="task.extraComponents"></hos-extra-components-task>
+        <tots-extra-components-task [config]="config" [position]="'bottom'"></tots-extra-components-task>
 
-        <hos-checklist-task [task]="task"></hos-checklist-task>
-        <hos-files-task [task]="task"></hos-files-task>
-    </div>-->
+        <!--<hos-checklist-task [task]="task"></hos-checklist-task>
+        <hos-files-task [task]="task"></hos-files-task>-->
+    </div>
 </div>
