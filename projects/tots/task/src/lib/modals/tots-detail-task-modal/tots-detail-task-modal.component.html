@@ -5,7 +5,7 @@
         <tots-assign-only-view-task *ngIf="config.disableAssign" [config]="config"></tots-assign-only-view-task>
         <tots-extra-actions-task [config]="config" (clickAction)="clickAction($event)"></tots-extra-actions-task>
         <div class="spacer"></div>
-        <!--<hos-status-box-task [task]="task"></hos-status-box-task>-->
+        <tots-status-task [config]="config"></tots-status-task>
         <button mat-flat-button (click)="onClickClose()" class="btn-close"><mat-icon>close</mat-icon></button>
     </div>
 

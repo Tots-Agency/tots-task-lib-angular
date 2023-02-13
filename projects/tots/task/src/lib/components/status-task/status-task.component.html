@@ -1,0 +1,3 @@
+<div class="task-status-container">
+    <button mat-button *ngIf="config.task.status" [ngStyle]="{'background-color': config.task.status.color}">{{config.task.status.title}}</button>
+</div>
