@@ -1,9 +1,9 @@
 {
   "name": "@tots/task",
-  "version": "15.0.1",
+  "version": "15.0.2",
   "peerDependencies": {
-    "@angular/common": "^15.1.0",
-    "@angular/core": "^15.1.0",
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
     "moment": "^2.29.4",
     "@tots/core": "^15.0.5",
     "@tots/table": "^15.0.10",
